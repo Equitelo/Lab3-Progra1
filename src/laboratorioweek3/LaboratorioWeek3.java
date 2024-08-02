@@ -15,18 +15,19 @@ public class LaboratorioWeek3 {
         
         int opcion=0;
         
-        while(opcion!=3){
-        do{
-        System.out.println("");
-        System.out.println("1 - Rock Paper Scissor \n2 - Piramide\n3 - piramide\n 4 - Salir");
-        System.out.print("Ingresar la opcion que guste: ");
-        opcion=lea.nextInt();
-        
-        if(opcion<0||opcion>3){
-            System.out.println("Escoger un numero dentro de las opciones");
-        }
-        
-        }while(opcion<0||opcion>3);
+        while(opcion!=4){
+            do{
+            System.out.println("");
+            System.out.println("1 - Rock Paper Scissor \n2 - Suma Entero\n3 - Piramide\n4 - Salir");
+            System.out.print("Ingresar la opcion que guste: ");
+            opcion=lea.nextInt();
+
+            if(opcion<0||opcion>4){
+                System.out.println("Escoger un numero dentro de las opciones");
+            }
+
+            }while(opcion<0||opcion>4);
+            
             if(opcion==1){
                 
                 int maquina;
@@ -106,8 +107,20 @@ public class LaboratorioWeek3 {
                 System.out.println(sumaSubs+" = "+suma);
             }else if(opcion==3){
                 
+                System.out.print("Ingresar el numero de filas: ");
+                int filas=lea.nextInt();
+                
+                for(int contadorPrincipal=0;contadorPrincipal<filas;contadorPrincipal++){
+                    for(int espacio=0;espacio<contadorPrincipal;espacio++){
+                        System.out.print("  ");
+                    }
+                    for(int contador=filas-contadorPrincipal;contador>=1;contador--){
+                      System.out.print(contador+" ");  
+                    }
+                    System.out.println();
+                }
             }else{
-                System.out.println("No existe");
+                System.out.println("Salir");
             }
         }
     }
