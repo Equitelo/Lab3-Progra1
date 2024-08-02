@@ -18,7 +18,7 @@ public class LaboratorioWeek3 {
         while(opcion!=3){
         do{
         System.out.println("");
-        System.out.println("1 - Rock Paper Scissor \n2 - Piramide\n3 - Salir");
+        System.out.println("1 - Rock Paper Scissor \n2 - Piramide\n3 - piramide\n 4 - Salir");
         System.out.print("Ingresar la opcion que guste: ");
         opcion=lea.nextInt();
         
@@ -32,10 +32,11 @@ public class LaboratorioWeek3 {
                 int maquina;
                 String mazoMaquina;
                 
+                while(true){
                 System.out.print("Ingresar 'piedra', 'papel' o 'tijera': ");
                 String mazo=lea.next().toLowerCase();
                 
-                maquina=aleatorio.nextInt(3);
+                maquina=aleatorio.nextInt(3)+1;
                 
                 if(maquina==1){
                     mazoMaquina="piedra";
@@ -74,9 +75,35 @@ public class LaboratorioWeek3 {
                 
                     System.out.println("Perdiste!");
                 }
+                System.out.println("Desea volver a jugar?(SI/NO)");
+                String respuesta = lea.next().toLowerCase();
                 
+                if(respuesta.equals("no")){
+                    break;
+                }
+                }
             }else if(opcion==2){
-            
+                int entero;
+                String sumaCadena="";
+                int suma = 0;
+
+                System.out.print("Ingrese un numero entero: ");
+                entero=lea.nextInt();
+
+                String enteroTexto=Integer.toString(entero);
+                
+                int longitud=enteroTexto.length()-1;
+                
+                for(int contador=0;contador<=longitud;contador++){
+                    char numeroChar = enteroTexto.charAt(contador);
+                    
+                    int numero = Integer.parseInt(Character.toString(numeroChar));
+                    
+                    sumaCadena += numero+" + ";
+                    suma+=numero;
+                } 
+                String sumaSubs= sumaCadena.substring(0, sumaCadena.length()-3);
+                System.out.println(sumaSubs+" = "+suma);
             }else if(opcion==3){
                 
             }else{
